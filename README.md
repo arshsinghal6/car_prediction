@@ -43,7 +43,7 @@ This method had varying success for detecting turning motion. While it was able 
 ## Artifacts
 I have created some videos to visualize my predictions under the prediction_videos folder. There are a lot of messy visualizations mainly because I used them for testing. Generally, the red lines in the video indicate where a line on the road is detected. Tiny blue dots are the clusters of intersection points between left and right lines. The green dot is my VP prediction and the yellow dot (for the labeled dataset videos) is the ground truth. Videos labelled "optical" show some of the keypoint movements from frame to frame, but there is a lot of noise. Videos labeled with "_turn" are ones that combine the VP detection and horizontal flow to try to account for turning. 
 
-Overall, I had a lot of fun on the project and I hope I can come back to it one day to refine some of it. Thanks to the team at comma.ai for the challenge!
+Overall, I had a lot of fun on the project and I hope I can come back to it one day to refine some of it. It was a great first-time experience with CV for someone who has always wanted to learn more about it. Thanks to the team at comma.ai for the challenge!
 
 
 
