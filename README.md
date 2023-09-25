@@ -4,7 +4,7 @@ My take on the comma.ai calibration challenge
 ## The Approach
 The goal of the challenge is to predict the pitch and yaw of the car's motion in the frame of the mounted dashcam. To obtain the pitch and yaw in the camera frame, we have to understand how 3D points from the camera coordinate system are projected onto a 2D pixel coordinate system. The camera coordinate system is defined as the z-axis pointing out from the camera, the x-axis as side-to-side, and the y-axis as up-down. Since we only have data from a single camera angle, the projection onto the pixel coordinate system means any depth information (Z-axis) is lost. However, the following formulas provide us with the X/Z and Y/Z ratio:
 
-X/Z = 1/f * (u - c_x)
+X/Z = 1/f * (u - c_x) <br>
 Y/Z = 1/f * (v - c_y),  where f = focal length, (u, v) = pixel coordinate, (c_x, c_y) = center of frame
 
 Taking the arctan of these ratio provide us with the yaw and pitch, respectively. So, given the (u, v) coordinate of where the car is headed in the camera frame, we can compute the pitch and yaw of the car. To determine this coordinate, I make the assumption that the car is headed towards the vanishing point in the frame. 
