@@ -1,10 +1,6 @@
 import cv2
 import numpy as np
 
-# max_features = 1000
-# detector = cv2.ORB_create(max_features)
-# matcher = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
-
 class flow_detector:
 
     def __init__(self):
@@ -24,15 +20,14 @@ class flow_detector:
                             blockSize = 10 )
 
         self.lk_params = dict( winSize  = (10,10), maxLevel = 1,
-                        criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))# Create some random colors
+                        criteria = (cv2.TERM_CRITERIA_EPS | cv2.TERM_CRITERIA_COUNT, 10, 0.03))
         
         width, height = 1164, 874
-        bottom_left = (int(width * 1/5), int(height * 3/4))      # Bottom-left corner
-        bottom_right = (int(width * 4/5), int(height * 3/4))  
-        top_left = (int(width * 1/5), 0)
-        top_right = (int(width * 4/5), 0)
+        bottom_left = (int(width * 1/3), int(height * 3/4))      
+        bottom_right = (int(width * 2/3), int(height * 3/4))  
+        top_left = (int(width * 1/3), 0)
+        top_right = (int(width * 2/3), 0)
         
-        # Create an empty mask of the same size as the image
         self.mask = np.zeros((height, width), dtype=np.uint8)
 
         cv2.fillConvexPoly(self.mask, np.array([bottom_left, bottom_right, top_right, top_left]), 255)
